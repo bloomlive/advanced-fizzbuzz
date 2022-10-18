@@ -18,14 +18,14 @@ final class FizzBuzzTest extends TestCase
     public function test_it_returns_expected_output_if_calculated()
     {
         $ruleset = new Ruleset();
-        $ruleset->addRule(new BuzzRule())
-            ->addRule(new SmallRule())
-            ->addRule(new FizzRule())
-            ->addRule(new FooRule())
-            ->addRule(new BooRule())
-            ->addRule(new BigRule())
-            ->addRule(new FTWRule())
-            ->addRule(new GGRule());
+        $ruleset->add(new BuzzRule())
+            ->add(new SmallRule())
+            ->add(new FizzRule())
+            ->add(new FooRule())
+            ->add(new BooRule())
+            ->add(new BigRule())
+            ->add(new FTWRule())
+            ->add(new GGRule());
 
         $fizzBuzz = new FizzBuzz(1, 3, $ruleset);
 
@@ -43,14 +43,14 @@ SmallFizzGG';
     public function test_it_returns_empty_output_if_not_calculated()
     {
         $ruleset = new Ruleset();
-        $ruleset->addRule(new BuzzRule())
-            ->addRule(new SmallRule())
-            ->addRule(new FizzRule())
-            ->addRule(new FooRule())
-            ->addRule(new BooRule())
-            ->addRule(new BigRule())
-            ->addRule(new FTWRule())
-            ->addRule(new GGRule());
+        $ruleset->add(new BuzzRule())
+            ->add(new SmallRule())
+            ->add(new FizzRule())
+            ->add(new FooRule())
+            ->add(new BooRule())
+            ->add(new BigRule())
+            ->add(new FTWRule())
+            ->add(new GGRule());
 
         $fizzBuzz = new FizzBuzz(1, 100, $ruleset);
 
@@ -66,14 +66,14 @@ SmallFizzGG';
     public function test_value_is_returned_if_no_rules_match()
     {
         $ruleset = new Ruleset();
-        $ruleset->addRule(new BuzzRule())
-            ->addRule(new SmallRule())
-            ->addRule(new FizzRule())
-            ->addRule(new FooRule())
-            ->addRule(new BooRule())
-            ->addRule(new BigRule())
-            ->addRule(new FTWRule())
-            ->addRule(new GGRule());
+        $ruleset->add(new BuzzRule())
+            ->add(new SmallRule())
+            ->add(new FizzRule())
+            ->add(new FooRule())
+            ->add(new BooRule())
+            ->add(new BigRule())
+            ->add(new FTWRule())
+            ->add(new GGRule());
 
         $fizzBuzz = new FizzBuzz(92, 92, $ruleset);
 

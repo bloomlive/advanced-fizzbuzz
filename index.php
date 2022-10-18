@@ -8,14 +8,14 @@ use App\Rules\{BigRule, BooRule, BuzzRule, FizzRule, FooRule, FTWRule, GGRule, S
 
 try {
     $ruleset = (new Ruleset())
-        ->addRule(new BuzzRule())
-        ->addRule(new SmallRule())
-        ->addRule(new FizzRule())
-        ->addRule(new FooRule())
-        ->addRule(new BooRule())
-        ->addRule(new BigRule())
-        ->addRule(new FTWRule())
-        ->addRule(new GGRule());
+        ->add(new BuzzRule())
+        ->add(new SmallRule())
+        ->add(new FizzRule())
+        ->add(new FooRule())
+        ->add(new BooRule())
+        ->add(new BigRule())
+        ->add(new FTWRule())
+        ->add(new GGRule());
 
     $fizzBuzz = new FizzBuzz(-1, 100, $ruleset);
 

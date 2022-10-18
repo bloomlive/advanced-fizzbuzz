@@ -12,7 +12,7 @@ class Ruleset
     /**
      * @throws RuleAlreadyInRulesetException
      */
-    public function addRule(IRule $rule): static
+    public function add(IRule $rule): static
     {
         if (isset($this->rules[get_class($rule)])) {
             throw new RuleAlreadyInRulesetException();

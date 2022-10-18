@@ -17,8 +17,8 @@ final class RulesetTest extends TestCase
     public function test_rules_can_be_added_to_ruleset()
     {
         $ruleset = (new Ruleset())
-            ->addRule(new FizzRule())
-            ->addRule(new BuzzRule());
+            ->add(new FizzRule())
+            ->add(new BuzzRule());
 
         $this->assertCount(2, $ruleset->getRules());
     }
@@ -28,9 +28,9 @@ final class RulesetTest extends TestCase
         $this->expectException(RuleAlreadyInRulesetException::class);
 
         (new Ruleset())
-            ->addRule(new FizzRule())
-            ->addRule(new BuzzRule())
-            ->addRule(new FizzRule());
+            ->add(new FizzRule())
+            ->add(new BuzzRule())
+            ->add(new FizzRule());
     }
 
     /**
@@ -39,8 +39,8 @@ final class RulesetTest extends TestCase
     public function test_all_rules_are_applied()
     {
         $ruleset = (new Ruleset())
-            ->addRule(new FizzRule())
-            ->addRule(new GGRule());
+            ->add(new FizzRule())
+            ->add(new GGRule());
 
         $result = $ruleset->apply(3);
 
