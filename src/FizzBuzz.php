@@ -16,7 +16,7 @@ class FizzBuzz
     /**
      * @throws EndValueSmallerThanStartValueException
      */
-    public function __construct(int $start, int $end, ?Ruleset $ruleset)
+    public function __construct(int $start, int $end, Ruleset $ruleset)
     {
         if ($end < $start) {
             throw new EndValueSmallerThanStartValueException();
