@@ -58,4 +58,25 @@ SmallFizzGG';
 
         $this->assertEquals('', $fizzBuzz->getOutput());
     }
+
+    /**
+     * @throws RuleAlreadyInRulesetException
+     * @throws EndValueSmallerThanStartValueException
+     */
+    public function test_value_is_returned_if_no_rules_match()
+    {
+        $ruleset = new Ruleset();
+        $ruleset->addRule(new BuzzRule())
+            ->addRule(new SmallRule())
+            ->addRule(new FizzRule())
+            ->addRule(new FooRule())
+            ->addRule(new BooRule())
+            ->addRule(new BigRule())
+            ->addRule(new FTWRule())
+            ->addRule(new GGRule());
+
+        $fizzBuzz = new FizzBuzz(92, 92, $ruleset);
+
+        $this->assertEquals(92, $fizzBuzz->calculate()->getResult()[92]);
+    }
 }
