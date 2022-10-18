@@ -17,4 +17,9 @@ stop the iteration of given integer.
 7. replace any number divisible by 3 and 5 with the word "FTW".
 8. replace any number divisible by 3 or 5 with the word "GG".
 
+## Errors
 
+The code will throw and handle an exception if You:
+
+1. try to supply an end value smaller than start value.
+2. try to add rule to the ruleset twice. 
